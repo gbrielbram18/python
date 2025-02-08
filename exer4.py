@@ -10,6 +10,6 @@ print("digite a temperatura em celcius")
 celcius = float(input())
 
       
-fahrenheit = celcius * 1.8 + 32
+fahrenheit = (celcius * 1.8) + 32
 
 print("essa e a temperatura em fahrenheit: F", fahrenheit, )
