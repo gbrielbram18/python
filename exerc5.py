@@ -20,3 +20,4 @@ print("Números pares no intervalo de", inicio, "a", fim, ":")
 for num in range(inicio, fim + 1):
     if num % 2 == 0:
         print(num)
+ 
