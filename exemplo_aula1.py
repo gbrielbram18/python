@@ -10,5 +10,3 @@ else:
     print("Você é menor de idade")
 
 
-"""
-"""
