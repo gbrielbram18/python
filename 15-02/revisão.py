@@ -19,3 +19,20 @@ listas = [True, "texto", 10, -50]
 
 #vetor
 #adicionar, editar, remover
+
+#tuplas
+#estrutura ordenada
+#tuple e imutavel
+cores =("vermelho", "branco", "preto")
+
+#dict
+pessoa ={
+    "nome": "gabriel",
+    "idade" : 18,
+    "cidade" : "são paulo",
+}
+
+#set
+numeros ={1,2,3,4}
+#set nao armazena numeros iguais, somente unicos
+# numeros
