@@ -7,4 +7,3 @@ if idade  >= 18:
 else:
     print("nao pode assistir o filme")
 
-
