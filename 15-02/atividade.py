@@ -10,4 +10,6 @@ elif idade > 50 :
 
 elif idade < 18 : 
     print ("nao pode entrar")
-    
+
+else:
+    print("pode entrar, bom filme!")
