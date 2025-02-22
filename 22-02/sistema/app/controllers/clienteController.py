@@ -1,10 +1,11 @@
 from ..models.cliente import Cliente
+from ..database.database import BancoFake
 
 class clienteController:
 
     def __init__(self):
         #contexto com o banco
-        self.db = ""
+        self.db = BancoFake()
     
     def criar_cliente(self, nome,email,idade):
         #cria o objeto cliente e salva no banco
@@ -16,7 +17,11 @@ class clienteController:
             "idade":novo_cliente.idade
         }
         #salvar no banco 
-        print("Cliente cadastrado")
+        self.db.adicionar_cliente(dict_cliente)
+        print("Cliente cadastrado com sucesso!")
     
     def listar_cliente(self):
-        print("listar clientes")
+        """
+        Retorna uma lista com os todos os clientes 
+        """
+        return self.db.listar_clientes()
