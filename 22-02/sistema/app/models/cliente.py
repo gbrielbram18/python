@@ -1,7 +1,7 @@
 
 class Cliente :
     
-    def _init_(self, nome, email , idade):
+    def __init__(self, nome, email , idade):
         self.nome = nome
         self.email = email
         self.idade = idade
