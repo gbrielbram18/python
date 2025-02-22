@@ -1,4 +1,4 @@
-
+from .app.controllers.clienteController import clienteController
 
 def exibir_menu():
     print("\n=== MENU ===")
@@ -9,6 +9,8 @@ def exibir_menu():
     print("0 - Sair do Sistema")
 
 def main():
+    cntrlCliente = clienteController()
+    
 
     while True:
         exibir_menu()
@@ -18,8 +20,9 @@ def main():
             nome==input("Nome do Cliente: ")
             email=input("E-mail: ")
             idade=int(input("idade: "))
-    
     #salvariamos no banco de dados
+            cntrlCliente.criar_cliente(nome, email, idade)
+    
         elif opc =="2":
     #listar do banco de dados os clientes
             print("listar")
