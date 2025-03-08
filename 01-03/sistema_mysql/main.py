@@ -21,6 +21,9 @@ def listar_produto():
             
 
 def cadastrar_produto():
-        
-
+    print("\n --- Cadastrar produtos---")
+    nome = input("digite o nome:")
+    preco = input("digite o preco:")
+    novo_id = produto_controller.cadastrar_produto(nome, preco)
+    print(f"produto cadastrado com sucesso com novo ID{novo_id}.")
     
