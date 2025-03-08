@@ -1,4 +1,4 @@
-from model.produto_model import ProdutoModel
+from ..model.produto_model import ProdutoModel
 
 def listar_produtos():
     """retorna a lista de todos os produtos (dict)"""
@@ -23,9 +23,9 @@ def atualizar_produto(produto_id, nome , preco):
     return linhas_afetadas 
 
 
-def obert_produto(produto_id):
+def remover_produto(produto_id):
     model =ProdutoModel()
     produto= model.get_product_by_id(produto_id)
     model.close_connection()
     return produto  
-    
+

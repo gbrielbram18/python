@@ -16,14 +16,14 @@ class ProdutoModel:
         )
         
         # Faz o cursor trazer o resultado em dicionarios  
-        self.cursor = self.connection.cursor(dicionary=True)
+        self.cursor = self.connection.cursor(dictionary=True)
         
         
         
     def get_all_procucts(self):
         """retornar a lista de todos os produtos"""
         
-        query= "SELECT id, nome , preco FROM produtos"
+        query= "SELECT id, nome, preco FROM produtos"
         self.cursor.execute(query)
         return self.cursor.fetchall()
     
@@ -52,8 +52,7 @@ class ProdutoModel:
     def update_product_by_id(self,product_id,  nome, preco):
         """atualizar um produto pelo id"""
         query= "UPDATE produtos SET nome = %s, preco = %s, WHERE id =%s "
-        
-        self.cursor.execute(query, nome ,preco ,product_id)
+        self.cursor.execute(query, (nome ,preco ,product_id))
         self.connection.commit()
         return self.cursor.rowcount
     
