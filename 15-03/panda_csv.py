@@ -21,4 +21,12 @@ df_csv = pd.read_csv("panda_dados.csv")
 df_fitrar = df[df["Idade"] > 25]
 print (df_fitrar) #Todas as pessoas com menos de 25 anos não aparecem
 
-        
+df_ordenado = df.sort_values(by = "Idade", ascending = False)
+print (df_ordenado) # Do maior para o menor (Decrescente)
+
+#Exibir estabilidade 
+print(df.describe())
+
+#media por cidade, coluna idade
+media_cidade = df.groupby("Cidade")["Idade"].mean()
+print(media_cidade)
