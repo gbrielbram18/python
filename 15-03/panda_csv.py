@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 #criar os dados para o nosso dataframe
 
@@ -30,3 +31,16 @@ print(df.describe())
 #media por cidade, coluna idade
 media_cidade = df.groupby("Cidade")["Idade"].mean()
 print(media_cidade)
+
+#df.plot(kind="bar", x = "Nome", y = "Idade", color = "blue" )
+#plt.title("Idade das pessoas")
+#plt.xlabel("Nome")
+#plt.ylabel("Idade")
+#plt.show()  
+
+df.boxplot(column="idade", by= "Cidade", grid= False)
+plt.title("Distribuição de idades por cidade")
+plt.xlabel("Cidade")
+plt.ylabel("Idade")
+
+plt.show() 
