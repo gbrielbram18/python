@@ -47,7 +47,7 @@ def cadastrar_user():
     email = input("digite o email: ")
     idade = input("digite sua idade: ")
     
-    novo_id = cadastrar_user(nome, email,idade)
+    novoId = cadastrar_user(nome, email,idade)
     print(f"usuario cadastrado com sucesso com novo ID.")
     
      
