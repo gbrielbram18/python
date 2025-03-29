@@ -1,15 +1,14 @@
 from flask import Blueprint, current_app, redirect   , render_template, request,url_for
-from sistema_mvc.models.produto import Produto
-from models.produto import produto
+from models.produto import Produto
 
 produto_bp =Blueprint('produto',__name__)
 
 @produto_bp.route('/')
 def index ():
-    produtos = produto.listar(current_app.mysql)
+    produtos = Produto.listar(current_app.mysql)
     return render_template('index.html', produtos=produtos)
 
-@produto_bp.route('/criar', methods= ['GET','POST'])
+@produto_bp.route('/criar', methods=['GET','POST'])
 def criar():
     if request.method == 'POST':
         #desejar criar um produto
@@ -32,6 +31,7 @@ def editar(id):
 
 @produto_bp.route('/deletar/<int:id>')
 def deletar(id):
+    print(id)
     Produto.deletar(current_app.mysql, id)
     return redirect(url_for('produto.index'))
 

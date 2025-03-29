@@ -8,14 +8,20 @@
 </head>
 <body>
     <h1> Lista de produtos</h1>
-    <a href="/criar/">Novo Produto</a>
+    <a href="/criar">Novo Produto</a>
     
     <ul>
+        {% for produto in produtos %}
         <li>
-            1 - Garrafa - R$180.00
-              <a href="/editar/">Editar</a>
-            <a href="/deletar/">Excluir</a>
+            {{produto['nome'] }} - {{produto ['preco']}}
+            <button><a>Editar</a></button>
+            <button><a href="{{ url_for('produto.deletar', id=produto['id']) }}">Deletar</a></button>
+
+
         </li>
+        {% endfor %}
+
+
     </ul>
     
 
