@@ -26,7 +26,7 @@ class Produto:
     @staticmethod
     def buscar_por_id(mysql , id):
         cursor = mysql.connection.cursor()
-        cursor.execute("SELECT id, nome, preco FROM produto WHERE id = %s", (id,))
+        cursor.execute("SELECT id, nome, preco FROM produtos WHERE id = %s", (id,))
         resultado = cursor.fetchone() #trazer somente um 
         cursor.close()
         if resultado:

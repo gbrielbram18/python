@@ -14,7 +14,8 @@
         {% for produto in produtos %}
         <li>
             {{produto['nome'] }} - {{produto ['preco']}}
-            <button><a>Editar</a></button>
+            <button><a href="{{ url_for('produto.editar', id=produto['id']) }} " >Editar</a></button>
+            
             <button><a href="{{ url_for('produto.deletar', id=produto['id']) }}">Deletar</a></button>
 
 
